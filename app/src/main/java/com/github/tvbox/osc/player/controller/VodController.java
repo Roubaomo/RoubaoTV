@@ -215,7 +215,7 @@ public class VodController extends BaseController {
                 try {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
-                    if (speed > 3)
+                    if (speed > 4)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
                     updatePlayerCfgView();
@@ -309,7 +309,7 @@ public class VodController extends BaseController {
             public void onClick(View view) {
                 int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
                 step += 5;
-                if (step > 30) {
+                if (step > 60) {
                     step = 5;
                 }
                 Hawk.put(HawkConfig.PLAY_TIME_STEP, step);

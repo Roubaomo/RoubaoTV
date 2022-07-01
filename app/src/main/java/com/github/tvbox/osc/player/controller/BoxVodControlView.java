@@ -330,7 +330,13 @@ public class BoxVodControlView extends FrameLayout implements IControlComponent,
             case VideoView.SCREEN_SCALE_DEFAULT:
                 scaleText = "默认";
                 break;
-            case VideoView.SCREEN_SCALE_16_9:
+            case VideoView.SCREEN_SCALE_ORIGINAL:
+                scaleText = "原始";
+                break;
+            case VideoView.SCREEN_SCALE_CENTER_CROP:
+                scaleText = "裁剪";
+                break;
+                case VideoView.SCREEN_SCALE_16_9:
                 scaleText = "16:9";
                 break;
             case VideoView.SCREEN_SCALE_4_3:
@@ -338,12 +344,6 @@ public class BoxVodControlView extends FrameLayout implements IControlComponent,
                 break;
             case VideoView.SCREEN_SCALE_MATCH_PARENT:
                 scaleText = "填充";
-                break;
-            case VideoView.SCREEN_SCALE_ORIGINAL:
-                scaleText = "原始";
-                break;
-            case VideoView.SCREEN_SCALE_CENTER_CROP:
-                scaleText = "裁剪";
                 break;
         }
         String speedText = "x" + videoSpeed;
