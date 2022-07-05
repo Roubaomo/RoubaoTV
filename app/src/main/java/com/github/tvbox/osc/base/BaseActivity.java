@@ -171,4 +171,4 @@ private static float screenRatio = -100.0f;
         return !(screenRatio >= 4.0f);
     }
 
- }
+}
