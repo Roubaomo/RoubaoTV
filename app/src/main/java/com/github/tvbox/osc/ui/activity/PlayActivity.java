@@ -227,7 +227,7 @@ public class PlayActivity extends BaseActivity {
                 if (mVideoView != null) {
                     mVideoView.release();
                     if (url != null) {
-                                                try {
+                        try {
                             int playerType = mVodPlayerCfg.getInt("pl");
                             if (playerType >= 10) {
                                 VodInfo.VodSeries vs = mVodInfo.seriesMap.get(mVodInfo.playFlag).get(mVodInfo.playIndex);
