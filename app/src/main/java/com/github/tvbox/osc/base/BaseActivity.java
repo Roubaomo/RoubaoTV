@@ -37,11 +37,11 @@ public abstract class BaseActivity extends AppCompatActivity implements CustomAd
     protected Context mContext;
     private LoadService mLoadService;
 
-private static float screenRatio = -100.0f;
+    private static float screenRatio = -100.0f;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-                try {
+        try {
             if (screenRatio < 0) {
                 DisplayMetrics dm = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -160,8 +160,8 @@ private static float screenRatio = -100.0f;
         }
         return "";
     }
-    
-  @Override
+
+    @Override
     public float getSizeInDp() {
         return isBaseOnWidth() ? 1280 : 720;
     }

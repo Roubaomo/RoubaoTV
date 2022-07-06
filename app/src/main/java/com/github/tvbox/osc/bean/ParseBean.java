@@ -27,7 +27,7 @@ public class ParseBean {
     }
 
     public String getUrl() {
-        return DefaultConfig.checkReplaceProxy(url);       
+        return DefaultConfig.checkReplaceProxy(url);
     }
 
     public void setUrl(String url) {

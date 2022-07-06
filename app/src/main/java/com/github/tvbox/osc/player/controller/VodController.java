@@ -18,6 +18,7 @@ import com.github.tvbox.osc.api.ApiConfig;
 import com.github.tvbox.osc.bean.IJKCode;
 import com.github.tvbox.osc.bean.ParseBean;
 import com.github.tvbox.osc.player.thirdparty.MXPlayer;
+import com.github.tvbox.osc.player.thirdparty.ReexPlayer;
 import com.github.tvbox.osc.ui.adapter.ParseAdapter;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.github.tvbox.osc.util.PlayerHelper;
@@ -216,7 +217,7 @@ public class VodController extends BaseController {
                 try {
                     float speed = (float) mPlayerConfig.getDouble("sp");
                     speed += 0.25f;
-                    if (speed > 4)
+                    if (speed > 3)
                         speed = 0.5f;
                     mPlayerConfig.put("sp", speed);
                     updatePlayerCfgView();
@@ -239,7 +240,9 @@ public class VodController extends BaseController {
                             playerVail = true;
                         } else if (playerType == 10) {
                             playerVail = mxPlayerExist;
-                        } else if (playerType > 10) {
+                        } else if (playerType == 11) {
+                            playerVail = reexPlayerExist;
+                        } else if (playerType > 11) {
                             playerType = 0;
                             playerVail = true;
                         }
@@ -248,7 +251,7 @@ public class VodController extends BaseController {
                     updatePlayerCfgView();
                     listener.updatePlayerCfg();
                     listener.replay();
-                    hideBottom();
+                    // hideBottom();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -287,7 +290,7 @@ public class VodController extends BaseController {
                     int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
                     int st = mPlayerConfig.getInt("st");
                     st += step;
-                    if (st > 60 * 6)
+                    if (st > 60 * 10)
                         st = 0;
                     mPlayerConfig.put("st", st);
                     updatePlayerCfgView();
@@ -304,7 +307,7 @@ public class VodController extends BaseController {
                     int step = Hawk.get(HawkConfig.PLAY_TIME_STEP, 5);
                     int et = mPlayerConfig.getInt("et");
                     et += step;
-                    if (et > 60 * 6)
+                    if (et > 60 * 10)
                         et = 0;
                     mPlayerConfig.put("et", et);
                     updatePlayerCfgView();
@@ -340,11 +343,13 @@ public class VodController extends BaseController {
     private JSONObject mPlayerConfig = null;
 
     private boolean mxPlayerExist = false;
+    private boolean reexPlayerExist = false;
 
     public void setPlayerConfig(JSONObject playerCfg) {
         this.mPlayerConfig = playerCfg;
         updatePlayerCfgView();
-        mxPlayerExist = MXPlayer.getMXPackageInfo() != null;
+        mxPlayerExist = MXPlayer.getPackageInfo() != null;
+        reexPlayerExist = ReexPlayer.getPackageInfo() != null;
     }
 
     void updatePlayerCfgView() {

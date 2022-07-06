@@ -191,7 +191,7 @@ public class LivePlayActivity extends BaseActivity {
 
             @Override
             public void onItemClick(TvRecyclerView parent, View itemView, int position) {
-               if (selectedGroupIndex == currentGroupIndex && position == currentChannelIndex)
+                if (selectedGroupIndex == currentGroupIndex && position == currentChannelIndex)
                     return;
                 if (playChannel(position, false)) {
                     mHandler.post(mHideChannelListRun);

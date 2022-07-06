@@ -500,7 +500,7 @@ public class SourceViewModel extends ViewModel {
             try {
                 result.put("key", url);
                 String playUrl = sourceBean.getPlayerUrl().trim();
-                if (DefaultConfig.isVideoFormat(url)&& playUrl.isEmpty()) {
+                if (DefaultConfig.isVideoFormat(url) && playUrl.isEmpty()) {
                     result.put("parse", 0);
                     result.put("url", url);
                 } else {

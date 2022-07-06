@@ -136,7 +136,6 @@ public class OkGoHelper {
 
         OkHttpClient okHttpClient = builder.build();
         OkGo.getInstance().setOkHttpClient(okHttpClient);
-        OkGo.getInstance().setRetryCount(2);
 
         initExoOkHttpClient();
         initPicasso(okHttpClient);
