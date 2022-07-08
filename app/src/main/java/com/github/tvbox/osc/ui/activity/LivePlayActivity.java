@@ -115,7 +115,7 @@ public class LivePlayActivity extends BaseActivity {
         initSettingItemView();
         initLiveChannelList();
         initLiveSettingGroupList();
-            }
+    }
 
     @Override
     public void onBackPressed() {

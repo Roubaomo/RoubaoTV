@@ -35,7 +35,7 @@
                 android:text="播放"
                 android:textColor="@color/color_FFFFFF"
                 android:textSize="@dimen/ts_24" />
-            
+
             <TextView
                 android:id="@+id/play_pre"
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 android:text="上一集"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/ts_24" />
-            
+
             <TextView
                 android:id="@+id/play_next"
                 android:layout_width="wrap_content"
