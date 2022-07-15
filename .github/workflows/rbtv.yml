@@ -18,7 +18,7 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew assemblerelease --build-cache --parallel --daemon --warning-mode all
-	    - name: release apk sign
+      - name: release apk sign
         run: |
           echo "给apk增加签名"
           cp $GITHUB_WORKSPACE/.github/workflows/android.keystore $GITHUB_WORKSPACE/app/android.keystore
