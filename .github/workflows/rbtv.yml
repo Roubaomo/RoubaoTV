@@ -21,8 +21,8 @@ jobs:
       - name: release apk sign
         run: |
           echo "给apk增加签名"
-          cp $GITHUB_WORKSPACE/.github/workflows/android.keystore $GITHUB_WORKSPACE/app/android.keystore
-          sed '$a\RELEASE_STORE_FILE=./android.keystore'          $GITHUB_WORKSPACE/gradle.properties -i
+          cp $GITHUB_WORKSPACE/.github/workflows/text.jks $GITHUB_WORKSPACE/app/text.jks
+          sed '$a\RELEASE_STORE_FILE=./text.jks'          $GITHUB_WORKSPACE/gradle.properties -i
       - name: build with gradle
         run: |
           echo "开始进行release构建"
