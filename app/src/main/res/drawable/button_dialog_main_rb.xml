@@ -9,7 +9,7 @@
     <item android:state_focused="false">
         <shape>
             <corners android:radius="@dimen/vs_5" />
-            <solid android:color="@color/color_59353744" />
+            <solid android:color="@color/color_591890FF" />
         </shape>
     </item>
 </selector>
