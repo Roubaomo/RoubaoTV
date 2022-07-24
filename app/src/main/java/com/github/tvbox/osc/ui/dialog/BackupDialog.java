@@ -92,7 +92,7 @@ public class BackupDialog extends BaseDialog {
         ArrayList<String> result = new ArrayList<>();
         try {
             String root = Environment.getExternalStorageDirectory().getAbsolutePath();
-            File file = new File(root + "/tvbox_backup/");
+            File file = new File(root + "/RBTV配置备份/");
             File[] list = file.listFiles();
             Arrays.sort(list, new Comparator<File>() {
                 @Override
@@ -121,7 +121,7 @@ public class BackupDialog extends BaseDialog {
     void restore(String dir) {
         try {
             String root = Environment.getExternalStorageDirectory().getAbsolutePath();
-            File backup = new File(root + "/tvbox_backup/" + dir);
+            File backup = new File(root + "/RBTV配置备份/" + dir);
             if (backup.exists()) {
                 File db = new File(backup, "sqlite");
                 if (AppDataManager.restore(db)) {
@@ -156,11 +156,11 @@ public class BackupDialog extends BaseDialog {
     void backup() {
         try {
             String root = Environment.getExternalStorageDirectory().getAbsolutePath();
-            File file = new File(root + "/tvbox_backup/");
+            File file = new File(root + "/RBTV配置备份/");
             if (!file.exists())
                 file.mkdirs();
             Date now = new Date();
-            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd-HHmmss");
+            SimpleDateFormat f = new SimpleDateFormat("yyyy年MM月dd日-EEE-HHmmss");
             File backup = new File(file, f.format(now));
             backup.mkdirs();
             File db = new File(backup, "sqlite");
